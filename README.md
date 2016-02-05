@@ -71,9 +71,9 @@ Printer [string]
 
 ###Configuration
 ```
-Configuration XD7AdministratorExample {
+Configuration PrinterExample {
     Import-DscResource -ModuleName PrinterManagement
-    Printer PrinterExample {
+    Printer SharedExamplePrinter {
         Name = 'Example Printer'
         DriverName = 'Microsoft XPS Class Driver'
         PortName = 'PORTPROMPT:'
