@@ -39,7 +39,7 @@ function Get-TargetResource {
         Import-Module -Name PrintManagement -Verbose:$false;
         $printer = Get-Printer -Name $Name -ErrorAction SilentlyContinue;
         $targetResource = @{
-            PrinterName = $Name;
+            Name = $Name;
             DriverName = $printer.DriverName;
             PortName = $printer.PortName;
             Comment = $printer.Comment;
@@ -56,6 +56,7 @@ function Test-TargetResource {
     [CmdletBinding()]
     [OutputType([System.Boolean])]
     param (
+        ## Specifies the name of the printer
         [Parameter(Mandatory)]
         [System.String] $Name,
         
